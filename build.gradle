@@ -3,6 +3,12 @@ plugins {
     id 'io.qameta.allure' version '2.10.0'
 }
 
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 group 'guru.qa'
 version '1.0'
 
