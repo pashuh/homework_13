@@ -16,87 +16,87 @@ public class StepsForDemoQa {
     SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName");
 
-    @Step("Открываем страницу automation-practice-form")
+    @Step("РћС‚РєСЂС‹РІР°РµРј СЃС‚СЂР°РЅРёС†Сѓ automation-practice-form")
     public void openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
     }
 
-    @Step("Удаляем рекламу и футер")
+    @Step("РЈРґР°Р»СЏРµРј СЂРµРєР»Р°РјСѓ Рё С„СѓС‚РµСЂ")
     public void removingAds() {
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
     }
 
-    @Step("Вводим имя")
+    @Step("Р’РІРѕРґРёРј РёРјСЏ")
     public void setFirstName() {
         firstNameInput.setValue("Pol");
     }
 
-    @Step("Вводим фамилию")
+    @Step("Р’РІРѕРґРёРј С„Р°РјРёР»РёСЋ")
     public void setLastName() {
         lastNameInput.setValue("Vod");
     }
 
-    @Step("Вводим Email")
+    @Step("Р’РІРѕРґРёРј Email")
     public void setuserEmail() {
         $("#userEmail").setValue("PV@gm.com");
     }
 
-    @Step("Выбираем пол")
+    @Step("Р’С‹Р±РёСЂР°РµРј РїРѕР»")
     public void setGender() {
         $("#genterWrapper").$(byText("Male")).click();
     }
 
-    @Step("Выбираем дату рождения")
+    @Step("Р’С‹Р±РёСЂР°РµРј РґР°С‚Сѓ СЂРѕР¶РґРµРЅРёСЏ")
     public void setDateOfBirth() {
         $("#dateOfBirthInput").click();
         calenderComponent.setDate("30", "July", "1997");
     }
 
-    @Step("Вводим номер телефона")
+    @Step("Р’РІРѕРґРёРј РЅРѕРјРµСЂ С‚РµР»РµС„РѕРЅР°")
     public void setNumber() {
         $("#userNumber").setValue("9990001122");
     }
 
-    @Step("Выбираем предметы")
+    @Step("Р’С‹Р±РёСЂР°РµРј РїСЂРµРґРјРµС‚С‹")
     public void setSubjects() {
         $("#subjectsInput").setValue("Chemistry").pressEnter();
     }
 
-    @Step("Вводим адрес")
+    @Step("Р’РІРѕРґРёРј Р°РґСЂРµСЃ")
     public void setAddress() {
         $("#currentAddress").setValue("Revaz 22");
     }
 
 
-    @Step("Выбираем хобби")
+    @Step("Р’С‹Р±РёСЂР°РµРј С…РѕР±Р±Рё")
     public void setHobby() {
         $(byText("Music")).click();
     }
 
 
-    @Step("Загружаем изображение")
+    @Step("Р—Р°РіСЂСѓР¶Р°РµРј РёР·РѕР±СЂР°Р¶РµРЅРёРµ")
     public void setLoad() {
         $("#uploadPicture").uploadFromClasspath("Screen1.png");
     }
 
-    @Step("Выбираем штат")
+    @Step("Р’С‹Р±РёСЂР°РµРј С€С‚Р°С‚")
     public void setState() {
         $("#react-select-3-input").setValue("Rajasthan").pressEnter();
     }
 
-    @Step("Выбираем город")
+    @Step("Р’С‹Р±РёСЂР°РµРј РіРѕСЂРѕРґ")
     public void setCity() {
         $("#react-select-4-input").setValue("Jaipur").pressEnter();
     }
 
-    @Step("Кликаем Submit")
+    @Step("РљР»РёРєР°РµРј Submit")
     public void pressSub() {
         $("#submit").click();
     }
 
-    @Step("Проверяем введенную информацию")
+    @Step("РџСЂРѕРІРµСЂСЏРµРј РІРІРµРґРµРЅРЅСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ")
     public void checkResult() {
         $(".modal-content").shouldHave(
                 text("Pol"),
